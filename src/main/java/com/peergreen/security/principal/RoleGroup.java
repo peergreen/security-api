@@ -57,4 +57,20 @@ public class RoleGroup implements Group, Serializable {
     public String getName() {
         return ROLES;
     }
+
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Principal member : members) {
+            if (sb.length() != 0) {
+                sb.append(", ");
+            }
+            sb.append(member.getName());
+        }
+        sb.append("]");
+        sb.insert(0, "RoleGroup[");
+        return sb.toString();
+    }
+
 }
