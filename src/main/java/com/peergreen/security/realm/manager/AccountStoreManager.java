@@ -1,5 +1,7 @@
 package com.peergreen.security.realm.manager;
 
+import java.util.List;
+
 import com.peergreen.security.realm.AccountStore;
 
 /**
@@ -7,4 +9,5 @@ import com.peergreen.security.realm.AccountStore;
  */
 public interface AccountStoreManager {
     <T extends AccountStore> ServiceHandle<T> findAccountStore(String name, Class<T> type);
+    List<String> listStoreNames();
 }
